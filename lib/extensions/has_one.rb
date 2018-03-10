@@ -8,7 +8,7 @@ require 'active_record'
     super
     name = reflection.name
     mixin.class_eval <<-CODE, __FILE__, __LINE__ + 1
-      def #{name.to_s}_id
+      def #{name}_id
         association(:#{name}).reader.id
       end
     CODE
